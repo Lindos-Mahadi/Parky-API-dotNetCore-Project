@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using ParkyAPI.AutoMapper;
 using ParkyAPI.Data;
 using ParkyAPI.Repository.Implement;
 using ParkyAPI.Repository.IRepository;
@@ -34,11 +35,14 @@ namespace ParkyAPI
             services.AddDbContext<ApplicationDbContext>
                 (options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-            //
-            //
-            //
+
             // REGISTER NATIONAL PARK REPOSITORY
             services.AddScoped<INationalParkRepository, NationalParkRepository>();
+
+            // AUTO MAPPER
+            services.AddAutoMapper(typeof(AutoMapperConfiguration));
+
+
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
