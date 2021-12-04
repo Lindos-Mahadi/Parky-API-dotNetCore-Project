@@ -8,6 +8,5 @@ namespace ParkyAPI.Models
 {
     public class NationalPark
     {
-
     }
 }
