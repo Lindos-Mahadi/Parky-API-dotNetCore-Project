@@ -58,7 +58,10 @@ namespace ParkyAPI
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "ParkyAPI v1"));
+                app.UseSwaggerUI(c => {
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "ParkyAPI v1");
+                    c.RoutePrefix = "";
+                    });
             }
 
             app.UseRouting();
