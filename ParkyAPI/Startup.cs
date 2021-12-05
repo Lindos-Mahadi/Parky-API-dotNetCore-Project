@@ -40,6 +40,7 @@ namespace ParkyAPI
 
             // REGISTER NATIONAL PARK REPOSITORY
             services.AddScoped<INationalParkRepository, NationalParkRepository>();
+            services.AddScoped<ITrailRepository, TrailRepository>();
 
             // AUTO MAPPER
             services.AddAutoMapper(typeof(AutoMapperConfiguration));
