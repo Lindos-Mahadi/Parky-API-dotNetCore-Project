@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using ParkyAPI.Models;
+using ParkyAPI.Models.Dtos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace ParkyAPI.AutoMapper
     {
         public AutoMapperConfiguration()
         {
-            CreateMap<NationalPar, NationalParkDto>().ReverseMap();
+            CreateMap<NationalPark, NationalParkDto>().ReverseMap();
         }
     }
 }
