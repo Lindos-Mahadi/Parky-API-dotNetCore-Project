@@ -1,16 +1,20 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
+using ParkyAPI.ApiVersionConfigure;
 using ParkyAPI.AutoMapper;
 using ParkyAPI.Data;
 using ParkyAPI.Repository.Implement;
 using ParkyAPI.Repository.IRepository;
+using Swashbuckle.AspNetCore.SwaggerGen;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -52,69 +56,78 @@ namespace ParkyAPI
                 options.DefaultApiVersion = new ApiVersion(1, 0);
                 options.ReportApiVersions = true;
             });
-
+            services.AddVersionedApiExplorer(options => options.GroupNameFormat = "'v'VVV");
+            services.AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigureSwaggerOptions>();
+            services.AddSwaggerGen();
 
             services.AddControllers();
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("NationalPark", new OpenApiInfo { 
-                    Title = "National Park", 
-                    Version = "v1",
+            //services.AddSwaggerGen(c =>
+            //{
+            //    c.SwaggerDoc("NationalPark", new OpenApiInfo { 
+            //        Title = "National Park", 
+            //        Version = "v1",
 
-                    Description = "National Park Controller",
-                    Contact = new Microsoft.OpenApi.Models.OpenApiContact()
-                    {
-                        Email = "lindosmahadi@gmail.com",
-                        Name = "lindos mahadi",
-                        Url = new Uri("https://wwww.github.com")
-                    },
-                    License = new Microsoft.OpenApi.Models.OpenApiLicense()
-                    {
-                        Name = "MIT License",
-                        Url = new Uri("https://en.wikipedia.org/wiki/MIT_License")
-                    }
+            //        Description = "National Park Controller",
+            //        Contact = new Microsoft.OpenApi.Models.OpenApiContact()
+            //        {
+            //            Email = "lindosmahadi@gmail.com",
+            //            Name = "lindos mahadi",
+            //            Url = new Uri("https://wwww.github.com")
+            //        },
+            //        License = new Microsoft.OpenApi.Models.OpenApiLicense()
+            //        {
+            //            Name = "MIT License",
+            //            Url = new Uri("https://en.wikipedia.org/wiki/MIT_License")
+            //        }
 
-                });
+            //    });
 
-                //c.SwaggerDoc("Trail", new OpenApiInfo
-                //{
-                //    Title = "Trail",
-                //    Version = "v1",
+            //    //c.SwaggerDoc("Trail", new OpenApiInfo
+            //    //{
+            //    //    Title = "Trail",
+            //    //    Version = "v1",
 
-                //    Description = "Trail Controller",
-                //    Contact = new Microsoft.OpenApi.Models.OpenApiContact()
-                //    {
-                //        Email = "lindosmahadi@gmail.com",
-                //        Name = "lindos mahadi",
-                //        Url = new Uri("https://wwww.github.com")
-                //    },
-                //    License = new Microsoft.OpenApi.Models.OpenApiLicense()
-                //    {
-                //        Name = "MIT License",
-                //        Url = new Uri("https://en.wikipedia.org/wiki/MIT_License")
-                //    }
+            //    //    Description = "Trail Controller",
+            //    //    Contact = new Microsoft.OpenApi.Models.OpenApiContact()
+            //    //    {
+            //    //        Email = "lindosmahadi@gmail.com",
+            //    //        Name = "lindos mahadi",
+            //    //        Url = new Uri("https://wwww.github.com")
+            //    //    },
+            //    //    License = new Microsoft.OpenApi.Models.OpenApiLicense()
+            //    //    {
+            //    //        Name = "MIT License",
+            //    //        Url = new Uri("https://en.wikipedia.org/wiki/MIT_License")
+            //    //    }
 
-                //});
+            //    //});
 
-                var xmlCommentFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-                var cmlCommentsFullPath = Path.Combine(AppContext.BaseDirectory, xmlCommentFile);
-                c.IncludeXmlComments(cmlCommentsFullPath);
+            //    var xmlCommentFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+            //    var cmlCommentsFullPath = Path.Combine(AppContext.BaseDirectory, xmlCommentFile);
+            //    c.IncludeXmlComments(cmlCommentsFullPath);
 
-            });
+            //});
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IApiVersionDescriptionProvider provider)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => {
-                    c.SwaggerEndpoint("/swagger/NationalPark/swagger.json", "National Park API");
-                    //c.SwaggerEndpoint("/swagger/Trail/swagger.json", "Trail API");
-                    c.RoutePrefix = "";
-                    });
+                app.UseSwaggerUI(options => {
+                    foreach (var desc in provider.ApiVersionDescriptions)
+                        options.SwaggerEndpoint($"/swagger/{desc.GroupName}/swagger.json",
+                            desc.GroupName.ToUpperInvariant());
+                    options.RoutePrefix = "";
+                });
+
+                //app.UseSwaggerUI(c => {
+                //    c.SwaggerEndpoint("/swagger/NationalPark/swagger.json", "National Park API");
+                //    //c.SwaggerEndpoint("/swagger/Trail/swagger.json", "Trail API");
+                //    c.RoutePrefix = "";
+                //    });
             }
 
             app.UseRouting();
