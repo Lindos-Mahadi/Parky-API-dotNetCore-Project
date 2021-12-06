@@ -102,9 +102,7 @@ namespace ParkyAPI
 
             //    //});
 
-            //    var xmlCommentFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-            //    var cmlCommentsFullPath = Path.Combine(AppContext.BaseDirectory, xmlCommentFile);
-            //    c.IncludeXmlComments(cmlCommentsFullPath);
+            
 
             //});
         }
@@ -122,12 +120,6 @@ namespace ParkyAPI
                             desc.GroupName.ToUpperInvariant());
                     options.RoutePrefix = "";
                 });
-
-                //app.UseSwaggerUI(c => {
-                //    c.SwaggerEndpoint("/swagger/NationalPark/swagger.json", "National Park API");
-                //    //c.SwaggerEndpoint("/swagger/Trail/swagger.json", "Trail API");
-                //    c.RoutePrefix = "";
-                //    });
             }
 
             app.UseRouting();

@@ -422,3 +422,4 @@ F:\DotNetCore\ParkyProject\ParkyAPI\bin\Debug\net5.0\AutoMapper.Extensions.Micro
 F:\DotNetCore\ParkyProject\ParkyAPI\bin\Debug\net5.0\ParkyAPI.xml
 F:\DotNetCore\ParkyProject\ParkyAPI\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.Versioning.dll
 F:\DotNetCore\ParkyProject\ParkyAPI\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer.dll
+F:\DotNetCore\ParkyProject\ParkyAPI\obj\Debug\net5.0\ParkyAPI.csproj.AssemblyReference.cache
