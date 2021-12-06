@@ -27,6 +27,9 @@ namespace ParkyAPI.ApiVersionConfigure
                         Version = desc.ApiVersion.ToString()
                     });
             }
+            var xmlCommentFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+            var cmlCommentsFullPath = Path.Combine(AppContext.BaseDirectory, xmlCommentFile);
+            options.IncludeXmlComments(cmlCommentsFullPath);
         }
     }
 }
