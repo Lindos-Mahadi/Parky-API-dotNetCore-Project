@@ -45,6 +45,13 @@ namespace ParkyAPI
             // AUTO MAPPER
             services.AddAutoMapper(typeof(AutoMapperConfiguration));
 
+            // API VERSION CONTROLL
+            services.AddApiVersioning(options =>
+            {
+                options.AssumeDefaultVersionWhenUnspecified = true;
+                options.DefaultApiVersion = new ApiVersion(1, 0);
+                options.ReportApiVersions = true;
+            });
 
 
             services.AddControllers();

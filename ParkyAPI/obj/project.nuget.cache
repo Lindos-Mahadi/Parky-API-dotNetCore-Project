@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "2/brg5En94XLvjBmhp8DJ5m71HMeZNzI8I309XPQRHe5otoRieSqSyihYM9/6/qTR5fp7zkI9gF7Nc//q3Oq8g==",
+  "dgSpecHash": "/GOqX6jO9wc4i35ozZ1lt8UYBCEI0tBVYMUwvfv1gxYOJSe7S6emk8OMupYUpcqxIYBU8sQe7DYiLTWqcxkMKA==",
   "success": true,
   "projectFilePath": "F:\\DotNetCore\\ParkyProject\\ParkyAPI\\ParkyAPI.csproj",
   "expectedPackageFiles": [
@@ -13,6 +13,8 @@
     "C:\\Users\\LINDOS\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\5.0.10\\microsoft.aspnetcore.identity.entityframeworkcore.5.0.10.nupkg.sha512",
     "C:\\Users\\LINDOS\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.extensions\\5.0.10\\microsoft.aspnetcore.mvc.razor.extensions.5.0.10.nupkg.sha512",
     "C:\\Users\\LINDOS\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.runtimecompilation\\5.0.10\\microsoft.aspnetcore.mvc.razor.runtimecompilation.5.0.10.nupkg.sha512",
+    "C:\\Users\\LINDOS\\.nuget\\packages\\microsoft.aspnetcore.mvc.versioning\\5.0.0\\microsoft.aspnetcore.mvc.versioning.5.0.0.nupkg.sha512",
+    "C:\\Users\\LINDOS\\.nuget\\packages\\microsoft.aspnetcore.mvc.versioning.apiexplorer\\5.0.0\\microsoft.aspnetcore.mvc.versioning.apiexplorer.5.0.0.nupkg.sha512",
     "C:\\Users\\LINDOS\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",
     "C:\\Users\\LINDOS\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\5.0.10\\microsoft.aspnetcore.razor.language.5.0.10.nupkg.sha512",
     "C:\\Users\\LINDOS\\.nuget\\packages\\microsoft.aspnetcore.razor.runtime\\2.2.0\\microsoft.aspnetcore.razor.runtime.2.2.0.nupkg.sha512",
