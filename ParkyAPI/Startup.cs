@@ -50,11 +50,31 @@ namespace ParkyAPI
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { 
-                    Title = "ParkyAPI", 
+                c.SwaggerDoc("NationalPark", new OpenApiInfo { 
+                    Title = "National Park", 
                     Version = "v1",
 
-                    Description = "Parky API",
+                    Description = "National Park Controller",
+                    Contact = new Microsoft.OpenApi.Models.OpenApiContact()
+                    {
+                        Email = "lindosmahadi@gmail.com",
+                        Name = "lindos mahadi",
+                        Url = new Uri("https://wwww.github.com")
+                    },
+                    License = new Microsoft.OpenApi.Models.OpenApiLicense()
+                    {
+                        Name = "MIT License",
+                        Url = new Uri("https://en.wikipedia.org/wiki/MIT_License")
+                    }
+
+                });
+
+                c.SwaggerDoc("Trail", new OpenApiInfo
+                {
+                    Title = "Trail",
+                    Version = "v1",
+
+                    Description = "Trail Controller",
                     Contact = new Microsoft.OpenApi.Models.OpenApiContact()
                     {
                         Email = "lindosmahadi@gmail.com",
@@ -84,7 +104,8 @@ namespace ParkyAPI
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
                 app.UseSwaggerUI(c => {
-                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "ParkyAPI v1");
+                    c.SwaggerEndpoint("/swagger/NationalPark/swagger.json", "National Park API");
+                    c.SwaggerEndpoint("/swagger/Trail/swagger.json", "Trail API");
                     c.RoutePrefix = "";
                     });
             }

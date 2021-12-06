@@ -420,4 +420,3 @@ F:\DotNetCore\ParkyProject\ParkyAPI\bin\Debug\net5.0\runtimes\win\lib\netstandar
 F:\DotNetCore\ParkyProject\ParkyAPI\bin\Debug\net5.0\AutoMapper.dll
 F:\DotNetCore\ParkyProject\ParkyAPI\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 F:\DotNetCore\ParkyProject\ParkyAPI\bin\Debug\net5.0\ParkyAPI.xml
-F:\DotNetCore\ParkyProject\ParkyAPI\obj\Debug\net5.0\ParkyAPI.csproj.AssemblyReference.cache
