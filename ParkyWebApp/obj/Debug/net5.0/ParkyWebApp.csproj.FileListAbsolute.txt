@@ -325,7 +325,6 @@ F:\DotNetCore\ParkyProject\ParkyWebApp\bin\Debug\net5.0\ru\Microsoft.CodeAnalysi
 F:\DotNetCore\ParkyProject\ParkyWebApp\bin\Debug\net5.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
 F:\DotNetCore\ParkyProject\ParkyWebApp\bin\Debug\net5.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
 F:\DotNetCore\ParkyProject\ParkyWebApp\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
-F:\DotNetCore\ParkyProject\ParkyWebApp\obj\Debug\net5.0\ParkyWebApp.csproj.AssemblyReference.cache
 F:\DotNetCore\ParkyProject\ParkyWebApp\obj\Debug\net5.0\ParkyWebApp.GeneratedMSBuildEditorConfig.editorconfig
 F:\DotNetCore\ParkyProject\ParkyWebApp\obj\Debug\net5.0\ParkyWebApp.AssemblyInfoInputs.cache
 F:\DotNetCore\ParkyProject\ParkyWebApp\obj\Debug\net5.0\ParkyWebApp.AssemblyInfo.cs
