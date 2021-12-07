@@ -354,3 +354,8 @@ F:\DotNetCore\ParkyProject\ParkyWebApp\obj\Debug\net5.0\ParkyWebApp.dll
 F:\DotNetCore\ParkyProject\ParkyWebApp\obj\Debug\net5.0\ref\ParkyWebApp.dll
 F:\DotNetCore\ParkyProject\ParkyWebApp\obj\Debug\net5.0\ParkyWebApp.pdb
 F:\DotNetCore\ParkyProject\ParkyWebApp\obj\Debug\net5.0\ParkyWebApp.genruntimeconfig.cache
+F:\DotNetCore\ParkyProject\ParkyWebApp\bin\Debug\net5.0\libman.json
+F:\DotNetCore\ParkyProject\ParkyWebApp\bin\Debug\net5.0\Microsoft.AspNetCore.JsonPatch.dll
+F:\DotNetCore\ParkyProject\ParkyWebApp\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+F:\DotNetCore\ParkyProject\ParkyWebApp\bin\Debug\net5.0\Newtonsoft.Json.dll
+F:\DotNetCore\ParkyProject\ParkyWebApp\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
