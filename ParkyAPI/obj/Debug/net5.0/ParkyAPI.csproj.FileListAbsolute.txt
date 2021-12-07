@@ -422,3 +422,4 @@ F:\DotNetCore\ParkyProject\ParkyAPI\obj\Debug\net5.0\ParkyAPI.dll
 F:\DotNetCore\ParkyProject\ParkyAPI\obj\Debug\net5.0\ref\ParkyAPI.dll
 F:\DotNetCore\ParkyProject\ParkyAPI\obj\Debug\net5.0\ParkyAPI.pdb
 F:\DotNetCore\ParkyProject\ParkyAPI\obj\Debug\net5.0\ParkyAPI.genruntimeconfig.cache
+F:\DotNetCore\ParkyProject\ParkyAPI\obj\Debug\net5.0\ParkyAPI.csproj.AssemblyReference.cache

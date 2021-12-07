@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using ParkyWebApp.Repository.Implementation;
+using ParkyWebApp.Repository.IRepository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,7 +26,10 @@ namespace ParkyWebApp
         {
             services.AddControllersWithViews();
 
+            // REGISTER SECTION HERE
             services.AddHttpClient();
+            services.AddScoped<INationalParkRepository, NationalParkRepository>();
+            services.AddScoped<ITrailRepository, TrailRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
